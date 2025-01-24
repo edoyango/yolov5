@@ -73,7 +73,7 @@ def train(hyp, opt, device, callbacks):  # hyp is path/to/hyp.yaml or hyp dictio
     callbacks.run('on_pretrain_routine_start')
 
     if opt.device=="xla":
-        from torch_xla.core.xla_model import xm
+        import torch_xla.core.xla_model as xm
         device = xm.xla_device()
 
     # Directories
